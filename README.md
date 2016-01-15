@@ -454,7 +454,7 @@ Use `.service` on a module to tell Angular that passed function is a *constructo
     ```
 
   * inject `widget` service inside `MainController`
-  
+
     ```
     class MainController
       constructor(basic) {
@@ -549,6 +549,57 @@ $stateProvider.state("main", {
 
 
 `ui-view` places a template based on given application state.
+
+
+## Module : Project
+
+### `TasksController` : `v1`
+
+  * Define a controller
+  * Define a template
+  * Display JSON from memory
+
+### Create your own API : `v2`
+
+  * Define `GET /tasks` for fetching all tasks
+    ```
+    http GET localhost:9292/tasks
+    ```
+  * Define `POST /tasks` for creating a task
+    ```
+    http POST localhost:9292/tasks name="This is example" state=open
+    ```
+  * Install `angular-resource`
+    ```
+    jspm install angular-resource
+    ```
+  * Use `$resource` to fetch data from the API
+  * Create `services` module and add as a dependency to `controllers`
+
+### Router using `ui-router`
+
+  * By default there is `ngRoute`
+  * `ui-router` is a better alternative, it supports states and nested views
+  * Install `ui-router`
+    ```
+    jspm install angular-ui-router
+    ```
+  * Add `ui-router` as a dependency
+  * Define two routes using Angular module `.config`: `/` and `/tasks` for dashboard and task list respectively
+  * Extract `index` into `tasks` and `home` templates and move them to `view` directory
+
+### Creating new task 
+
+### Single view with `TaskController`
+
+  * Define view for a single task
+  * Define `get` for `TaskService`
+  * Define router's state
+  * Use `ui-sref` for state management
+
+### Creating tasks
+
+### Editing tasks
 
 
 [1]: https://en.wikipedia.org/wiki/Polyfill
