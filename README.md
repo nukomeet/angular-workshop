@@ -2,6 +2,8 @@
 
 An intensive, practical introduction to AngularJS 1.x.
 
+Slides are [here][10]
+
 ## Prerequisites
 
   * [Node][P:01]
@@ -588,7 +590,7 @@ $stateProvider.state("main", {
   * Define two routes using Angular module `.config`: `/` and `/tasks` for dashboard and task list respectively
   * Extract `index` into `tasks` and `home` templates and move them to `view` directory
 
-### Creating new task 
+### Creating new task
 
 ### Single view with `TaskController`
 
@@ -608,3 +610,4 @@ $stateProvider.state("main", {
 [5]: http://spinejs.com/docs/commonjs
 [6]: https://en.wikipedia.org/wiki/Asynchronous_module_definition
 [00:7]: http://api.openweathermap.org/data/2.5/weather
+[10]: https://s3.amazonaws.com/nukomeet/angular-1x-workshop.pdf
