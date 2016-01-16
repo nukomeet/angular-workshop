@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html ng-app='app'>
+  <head>
+    <meta charset="utf-8">
+    <title>Nukomeet AngularJS 1.x Workshop 02</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.1.1/foundation.min.css" media="screen" title="no title" charset="utf-8">
+    <style media="screen">
+      body {
+        padding: 20px 20px;
+      }
+    </style>
+  </head>
+  <body ng-controller='MainController as mc'>
+
+    <ul ng-repeat="item in mc.list track by $index">
+      <li>{{ item }}</li>
+    </ul>
+
+    <form >
+      <input type="text" placeholder="add shopping item" ng-model="mc.item" />
+      <input ng-click="mc.addItem()" type="submit" value="Add" class="button"/>
+    </form>
+
+
+    <script src="jspm_packages/system.js" charset="utf-8"></script>
+    <script src="config.js" charset="utf-8"></script>
+    <script type="text/javascript">
+      System.import("app/main");
+    </script>
+  </body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html ng-app='app'>
+  <head>
+    <meta charset="utf-8">
+    <title>Nukomeet AngularJS 1.x Workshop 02</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.1.1/foundation.min.css" media="screen" title="no title" charset="utf-8">
+    <style media="screen">
+      body {
+        padding: 20px 20px;
+      }
+    </style>
+  </head>
+  <body ng-controller='MainController as mc'>
+
+    <input ng-model="mc.title"/>
+    <h1 ng-bind="mc.title | boo"></h1>
+    <h5 ng-bind="mc.foo()"></h5>
+
+    <p ng-bind="mc.boo()"></p>
+
+    <!-- 03 -->
+    <button class="button" ng-click="mc.alertMe()">Alert me</button>
+
+    <!-- 04 -->
+    <button class="button" ng-click="foo.toggle = !foo.toggle">Show</button>
+    <div ng-if="foo.toggle">
+      Lorem ipsum sit arithmetic
+    </div>
+
+    <!-- 05 -->
+    <ul ng-repeat="task in mc.tasks">
+      <li ng-bind="task"></li>
+    </ul>
+
+    <!-- 08 -->
+    <input ng-model="search1" type="text" />
+    <ul ng-repeat="task in mc.tasks | filter:search1 ">
+      <li ng-bind="task"></li>
+    </ul>
+
+    <input ng-model="search.name" type="text" />
+    <ul ng-repeat="task in mc.tasks2 | filter:search ">
+      <li ng-bind="task.name"></li>
+    </ul>
+
+    <hr/>
+
+    <!-- 09 -->
+    <input ng-model="search.name" type="text" />
+    <label>
+      <input type="checkbox" ng-model="search.done"/>
+      <span>Show done tasks</span>
+    </label>
+    <input ng-model="limit" type="number" />
+    <ul ng-repeat="task in mc.tasks2 | filter:search | limitTo:limit">
+      <li>
+        <input type="checkbox" ng-model="task.done" />
+        <span ng-bind="task.name"></span>
+      </li>
+    </ul>
+
+
+    <script src="jspm_packages/system.js" charset="utf-8"></script>
+    <script src="config.js" charset="utf-8"></script>
+    <script type="text/javascript">
+      System.import("app/main");
+    </script>
+  </body>
+</html>

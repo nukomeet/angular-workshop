@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html ng-app>
+  <head>
+    <meta charset="utf-8">
+    <title>Nukomeet AngularJS 1.x Workshop 01</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.1.1/foundation.min.css" media="screen" title="no title" charset="utf-8">
+    <style media="screen">
+      body {
+        padding: 20px 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="text" name="name" value="" ng-model="foo.name">
+    <input type="text" name="name" value="" ng-model="foo.class">
+
+    <div class="callout {{ foo.class }}">
+      <h1>Hello {{ foo.name }}</h1>
+    </div>
+
+    <script src="jspm_packages/system.js" charset="utf-8"></script>
+    <script src="config.js" charset="utf-8"></script>
+    <script type="text/javascript">
+      System.import("app/main");
+    </script>
+  </body>
+</html>
